@@ -32,11 +32,10 @@ export default function HomeScreen() {
 
   return (
     <Screen>
-      <Header
-        cityLabel="Dakar, Sénégal"
-        notificationCount={2}
-        onPressNotifications={() => navigation.navigate("Notifications")}
-      />
+    <Header
+  notificationCount={2}
+  onPressNotifications={() => navigation.navigate("Notifications")}
+/>
 
       {/* Barre de recherche */}
       <TouchableOpacity

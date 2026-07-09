@@ -1,19 +1,15 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Image, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { colors } from "../../theme/tokens";
 
 interface HeaderProps {
-  greeting?: string;
-  cityLabel?: string;
   onPressLocation?: () => void;
   onPressNotifications?: () => void;
   notificationCount?: number;
 }
 
 export default function Header({
-  greeting = "Bonjour ",
-  cityLabel = "Dakar, Sénégal",
   onPressLocation,
   onPressNotifications,
   notificationCount = 0,
@@ -25,14 +21,11 @@ export default function Header({
         className="flex-1"
         activeOpacity={0.7}
       >
-        <Text className="text-muted text-xs">{greeting}</Text>
-        <View className="flex-row items-center mt-0.5">
-          <Ionicons name="location-sharp" size={16} color={colors.primary} />
-          <Text className="text-ink text-base font-semibold ml-1">
-            {cityLabel}
-          </Text>
-          <Ionicons name="chevron-down" size={16} color={colors.muted} />
-        </View>
+        <Image
+          source={require("../../../assets/images/logo.png")}
+          style={{ width: 44, height: 44, borderRadius: 12 }}
+          resizeMode="contain"
+        />
       </TouchableOpacity>
 
       <TouchableOpacity

@@ -1,9 +1,3 @@
-/**
- * tokens.ts — source de vérité du design system Deukway.
- * Ces valeurs doivent rester synchronisées avec tailwind.config.js.
- * Utilisées directement dans les composants qui ont besoin de valeurs JS
- * (ex: react-native-maps, icônes, animations) plutôt que de classes NativeWind.
- */
 
 export const colors = {
   primary: "#0E7C5A",
