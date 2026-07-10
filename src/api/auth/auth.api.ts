@@ -1,4 +1,4 @@
-import { apiClient } from "../auth/client";
+import { apiClient } from "../../api/clients";
 import {
   AuthResponse,
   LoginPayload,
@@ -9,7 +9,7 @@ import {
 /**
  * Couche API pure: aucun state ici (voir src/store/auth.store.ts pour l'état
  * applicatif). Chaque fonction correspond à un endpoint du back-end NestJS.
- * ⚠️ Pas encore branché sur un vrai back-end — utilisé une fois l'API prête.
+ * Pas encore branché sur un vrai back-end — utilisé une fois l'API prête.
  */
 export const authApi = {
   async login(payload: LoginPayload): Promise<AuthResponse> {

@@ -5,8 +5,9 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import Screen from "../../components/layout/Screen";
 import OtpForm from "../../components/forms/OtpForm";
 import { useAuth } from "../../hooks/useAuth";
-import { authApi } from "@/api/auth/auth.api";
-import { colors } from "@/theme/tokens";
+import { authApi } from "../../api/auth/auth.api";
+import { colors } from "../../theme/tokens";
+import { consumePendingAuthAction } from "../../services/pendingAuthAction";
 
 export default function OtpScreen() {
   const navigation = useNavigation<any>();
@@ -16,6 +17,12 @@ export default function OtpScreen() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | undefined>(undefined);
 
+  const completeLogin = () => {
+    navigation.navigate("Main");
+    const pending = consumePendingAuthAction();
+    if (pending) setTimeout(pending, 0);
+  };
+
   const handleVerify = async (code: string) => {
     setLoading(true);
     setError(undefined);
@@ -23,7 +30,8 @@ export default function OtpScreen() {
       const response = await authApi.verifyOtp({ phone, code });
       await signIn(response.user, response);
     } catch (e) {
-      
+      // ⚠️ Fallback MVP tant que /auth/otp/verify n'est pas branché:
+      // n'importe quel code à 6 chiffres connecte l'utilisateur.
       await signIn(
         {
           id: "mock-user-new",
@@ -36,6 +44,7 @@ export default function OtpScreen() {
       );
     } finally {
       setLoading(false);
+      completeLogin();
     }
   };
 

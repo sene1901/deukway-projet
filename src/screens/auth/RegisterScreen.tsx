@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import Screen from "../../components/layout/Screen";
 import RegisterForm, { RegisterFormValues } from "../../components/forms/RegisterForm";
 import { useAuth } from "../../hooks/useAuth";
-import { authApi } from "../api/auth/auth.api";
+import { authApi } from "../../api/auth/auth.api";
 import { colors } from "../../theme/tokens";
 
 export default function RegisterScreen() {

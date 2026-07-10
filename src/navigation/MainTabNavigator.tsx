@@ -11,10 +11,7 @@ import ProfileScreen from "../screens/profile/ProfileScreen";
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
 
-/**
- * Navigation principale, visible une fois l'utilisateur connecté.
- * L'onglet "Home" est le premier onglet et l'écran affiché au démarrage.
- */
+
 export default function MainTabNavigator() {
   return (
     <Tab.Navigator

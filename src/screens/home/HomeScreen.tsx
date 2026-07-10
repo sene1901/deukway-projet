@@ -33,7 +33,7 @@ export default function HomeScreen() {
   return (
     <Screen>
     <Header
-  notificationCount={2}
+  notificationCount={1}
   onPressNotifications={() => navigation.navigate("Notifications")}
 />
 
