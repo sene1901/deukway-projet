@@ -206,7 +206,9 @@ const activeAmenities = Object.entries(property.amenities ?? {}).filter(
                 variant="outline"
                 icon={<Ionicons name="calendar-outline" size={16} color={colors.primary} />}
                 onPress={() =>
-                  requireAuth(() => navigation.navigate("Main", { screen: "Home" }))
+                  requireAuth(() =>
+                    navigation.navigate("ScheduleVisit", { propertyId: property.id })
+                  )
                 }
               />
             </View>

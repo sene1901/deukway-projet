@@ -29,8 +29,8 @@ export default function RootNavigator() {
   const { hydrate } = useAuth();
 
   useEffect(() => {
-    // Restaure une session existante en arrière-plan (SecureStore), sans
-    // bloquer l'affichage de l'accueil.
+     
+    
     hydrate();
   }, []);
 

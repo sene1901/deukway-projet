@@ -13,7 +13,7 @@ import { useRoute } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { colors } from "../../theme/tokens";
 import { chatApi } from "../../api/chat/chat.api";
-import { ChatMessage } from "../../types/";
+import { ChatMessage } from "../../types/chat";
 
 function seedMessages(conversationId: string): ChatMessage[] {
   return [
